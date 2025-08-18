@@ -88,16 +88,17 @@ export default defineConfig({
     target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
   },
   server: {
-    port: 8080,
+    port: 3000,
     host: true,
     cors: true,
+    strictPort: true,
     headers: {
       'Cross-Origin-Embedder-Policy': 'credentialless',
       'Cross-Origin-Opener-Policy': 'same-origin',
     },
   },
   preview: {
-    port: 8080,
+    port: 3000,
     host: true,
     cors: true,
   },

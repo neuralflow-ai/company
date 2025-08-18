@@ -4,35 +4,60 @@ export const seoConfig = {
   siteName: 'NeuralFlow AI',
   companyName: 'NeuralFlow AI',
   
-  // Primary keywords for ranking
+  // Primary keywords for ranking (trending, high-traffic, low-competition)
   primaryKeywords: [
-    'AI automation',
-    'business process automation',
-    'intelligent automation',
-    'AI business solutions',
-    'custom AI development',
+    'agentic AI',
     'AI workflow automation',
+    'intelligent process automation',
+    'conversational AI platform',
+    'AI business automation',
+    'custom AI agents',
     'enterprise AI solutions',
-    'AI process optimization'
+    'AI process optimization',
+    'generative AI for business',
+    'AI-powered automation'
   ],
   
-  // Long-tail keywords for content optimization
+  // Long-tail keywords for content optimization (trending, low-competition)
   longTailKeywords: [
-    'AI automation for small business',
-    'how to automate business processes with AI',
-    'best AI automation tools for business',
-    'AI workflow automation solutions',
-    'custom AI automation development',
-    'intelligent process automation services',
-    'AI business automation consulting',
-    'enterprise AI automation platform'
+    'agentic AI solutions for business',
+    'AI workflow automation platform',
+    'conversational AI chatbot development',
+    'intelligent document processing AI',
+    'AI-powered customer service automation',
+    'generative AI business applications',
+    'custom AI agent development services',
+    'enterprise agentic AI implementation',
+    'AI automation for small business growth',
+    'intelligent process automation consulting',
+    'AI workflow optimization tools',
+    'business process automation with AI'
+  ],
+
+  // Competitor gap keywords - untapped opportunities based on 2025 market analysis
+  competitorGapKeywords: [
+    'AI workflow redesign services',
+    'agentic AI system implementation',
+    'hyperautomation strategy consulting',
+    'AI process transformation consulting',
+    'no-code AI automation platform',
+    'citizen developer AI tools',
+    'AI-driven workflow orchestration',
+    'enterprise AI ecosystem integration',
+    'AI productivity transformation',
+    'strategic AI workflow optimization',
+    'AI-powered process intelligence',
+    'automated workflow ecosystem design',
+    'AI change management consulting',
+    'deep AI integration strategy',
+    'AI operational transformation'
   ],
   
   // Default meta configuration
   defaultMeta: {
-    title: 'AI Business Automation Solutions | NeuralFlow AI - Custom AI Development',
-    description: 'Transform your business with AI automation solutions. Custom AI development, intelligent process automation, and workflow optimization. 300% efficiency boost, 60% cost reduction. Get started today.',
-    keywords: 'AI automation, business process automation, intelligent automation, custom AI development, AI workflow optimization, enterprise AI solutions',
+    title: 'Agentic AI & AI Workflow Automation Solutions | NeuralFlow AI - Custom AI Agents',
+    description: 'Transform your business with agentic AI solutions. Custom AI agents, conversational AI platforms, intelligent process automation. 300% efficiency boost, 60% cost reduction. Get started today.',
+    keywords: 'agentic AI, AI workflow automation, conversational AI platform, intelligent process automation, custom AI agents, generative AI for business, AI-powered automation',
     author: 'NeuralFlow AI Team',
     robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     language: 'en-US',
@@ -71,11 +96,11 @@ export const seoConfig = {
       name: 'NeuralFlow AI',
       url: 'https://neuralflow.cloud',
       logo: 'https://neuralflow.cloud/logo.png',
-      description: 'Leading AI automation company providing custom AI solutions and intelligent business process automation.',
+      description: 'Leading agentic AI company providing custom AI agents, conversational AI platforms, and intelligent process automation solutions for business transformation.',
       foundingDate: '2023',
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: '+1-555-0123',
+        telephone: '+92 310 5163094',
         contactType: 'customer service',
         email: 'hello@neuralflow.cloud',
         availableLanguage: 'English'
@@ -98,7 +123,7 @@ export const seoConfig = {
       '@type': 'WebSite',
       name: 'NeuralFlow AI',
       url: 'https://neuralflow.cloud',
-      description: 'AI business automation solutions and custom AI development services.',
+      description: 'Agentic AI solutions, AI workflow automation platforms, and custom AI agent development services.',
       potentialAction: {
         '@type': 'SearchAction',
         target: 'https://neuralflow.cloud/search?q={search_term_string}',
@@ -114,7 +139,7 @@ export const seoConfig = {
         '@type': 'Organization',
         name: 'NeuralFlow AI'
       },
-      description: 'Comprehensive AI automation solutions including custom AI development, intelligent process automation, and workflow optimization.',
+      description: 'Comprehensive agentic AI solutions including custom AI agents, conversational AI platforms, intelligent process automation, and AI workflow optimization.',
       serviceType: 'AI Automation Services',
       areaServed: 'Worldwide',
       hasOfferCatalog: {
@@ -125,24 +150,24 @@ export const seoConfig = {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Custom AI Agent Development',
-              description: 'Tailored AI agents for specific business processes and workflows.'
+              name: 'Agentic AI Development',
+              description: 'Custom agentic AI solutions and intelligent AI agents for automated business processes and workflows.'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Intelligent Process Automation',
-              description: 'End-to-end business process automation using AI and machine learning.'
+              name: 'AI Workflow Automation Platform',
+              description: 'Comprehensive AI workflow automation and intelligent process automation using advanced machine learning.'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'AI Workflow Optimization',
-              description: 'Optimization of existing business workflows using artificial intelligence.'
+              name: 'Conversational AI Platform',
+              description: 'Advanced conversational AI chatbot development and generative AI business applications.'
             }
           }
         ]
@@ -175,7 +200,18 @@ export const seoConfig = {
   // Local SEO (if applicable)
   localSEO: {
     businessName: 'NeuralFlow AI',
-    businessType: 'Technology Company',
+    businessType: 'Agentic AI & AI Workflow Automation Company',
+    description: 'Leading agentic AI company in San Francisco providing AI workflow automation, conversational AI platforms, and intelligent process automation services.',
+    keywords: [
+      'agentic AI company San Francisco',
+      'AI workflow automation San Francisco',
+      'conversational AI platform California',
+      'intelligent process automation Bay Area',
+      'custom AI agents San Francisco',
+      'AI automation services California',
+      'enterprise AI solutions Bay Area',
+      'AI consulting San Francisco'
+    ],
     address: {
       streetAddress: '123 Innovation Drive',
       addressLocality: 'San Francisco',
@@ -187,46 +223,53 @@ export const seoConfig = {
       latitude: '37.7749',
       longitude: '-122.4194'
     },
-    telephone: '+1-555-0123',
+    telephone: '+92 310 5163094',
     email: 'hello@neuralflow.cloud',
     openingHours: 'Mo-Fr 09:00-18:00',
-    priceRange: '$$$'
+    priceRange: '$$$',
+    serviceAreas: [
+      'San Francisco, CA',
+      'Bay Area, CA',
+      'Silicon Valley, CA',
+      'California, US',
+      'United States'
+    ]
   }
 };
 
 // Page-specific SEO configurations
 export const pageConfigs = {
   home: {
-    title: 'AI Business Automation Solutions | NeuralFlow AI - Transform Your Business',
-    description: 'Leading AI automation company. Custom AI development, intelligent process automation, workflow optimization. 300% efficiency boost, 60% cost reduction. Free consultation available.',
-    keywords: 'AI automation, business automation, intelligent automation, custom AI development, AI workflow optimization, process automation, enterprise AI solutions',
+    title: 'Agentic AI & AI Workflow Automation | NeuralFlow AI - Transform Your Business',
+    description: 'Leading agentic AI company. Custom AI agents, conversational AI platforms, intelligent process automation. 300% efficiency boost, 60% cost reduction. Free consultation available.',
+    keywords: 'agentic AI, AI workflow automation, conversational AI platform, intelligent process automation, custom AI agents, generative AI for business, AI-powered automation',
     canonical: 'https://neuralflow.cloud/',
     priority: 1.0,
     changefreq: 'weekly'
   },
   
   services: {
-    title: 'AI Automation Services | Custom AI Development & Process Automation',
-    description: 'Comprehensive AI automation services: custom AI agents, intelligent process automation, workflow optimization, and enterprise AI solutions. Proven ROI in 30 days.',
-    keywords: 'AI automation services, custom AI development, intelligent process automation, AI workflow optimization, enterprise AI solutions, business process automation',
+    title: 'Agentic AI Services | AI Workflow Automation & Conversational AI Platform',
+    description: 'Comprehensive agentic AI services: custom AI agents, conversational AI platforms, intelligent process automation, AI workflow optimization. Proven ROI in 30 days.',
+    keywords: 'agentic AI solutions, AI workflow automation platform, conversational AI chatbot development, intelligent process automation consulting, custom AI agent development services',
     canonical: 'https://neuralflow.cloud/services',
     priority: 0.9,
     changefreq: 'weekly'
   },
   
   about: {
-    title: 'About NeuralFlow AI | Leading AI Automation Company & Expert Team',
-    description: 'Meet the NeuralFlow AI team. Leading AI automation company with 500+ successful projects, 98% client satisfaction. Expert AI developers and automation specialists.',
-    keywords: 'AI automation company, AI development team, business automation experts, intelligent automation specialists, custom AI solutions',
+    title: 'About NeuralFlow AI | Leading Agentic AI Company & Expert Team',
+    description: 'Meet the NeuralFlow AI team. Leading agentic AI company with 500+ successful projects, 98% client satisfaction. Expert AI agents and conversational AI specialists.',
+    keywords: 'agentic AI company, conversational AI platform experts, AI workflow automation specialists, custom AI agent development team, generative AI for business',
     canonical: 'https://neuralflow.cloud/about',
     priority: 0.7,
     changefreq: 'monthly'
   },
   
   blog: {
-    title: 'AI Automation Blog | Latest Insights & Trends | NeuralFlow AI',
-    description: 'Expert insights on AI automation, intelligent process automation, and business transformation. Latest trends, case studies, and actionable strategies.',
-    keywords: 'AI automation blog, intelligent automation insights, business process automation trends, AI development articles, automation case studies',
+    title: 'Agentic AI Blog | AI Workflow Automation Insights & Trends | NeuralFlow AI',
+    description: 'Expert insights on agentic AI, conversational AI platforms, and intelligent process automation. Latest trends, case studies, and actionable strategies.',
+    keywords: 'agentic AI blog, AI workflow automation insights, conversational AI platform trends, intelligent process automation articles, generative AI business applications',
     canonical: 'https://neuralflow.cloud/blog',
     priority: 0.8,
     changefreq: 'daily'

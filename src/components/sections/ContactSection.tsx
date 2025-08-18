@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -9,8 +9,9 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Calendar, Users, MessageCircle, Mail, DollarSign, Briefcase } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import toast from 'react-hot-toast';
 import { submitEmail, getEmailConfig } from '@/utils/emailService';
+import FreeOrderSection from '@/components/sections/FreeOrderSection';
 // Removed NetworkBackground import - using unified background from App.tsx
 
 // Custom Fiverr Icon Component
@@ -48,7 +49,8 @@ type FormData = z.infer<typeof formSchema>;
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { toast } = useToast();
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const {
     register,
@@ -95,126 +97,191 @@ const ContactSection = () => {
         });
       });
 
-      // Submit via email service (Formspree/EmailJS)
-      const config = getEmailConfig();
-      await submitEmail(
-        {
+      // Create WhatsApp message for agent notification
+      const whatsappMessage = `🚀 *New Contact Form Submission - NeuralFlow AI*\n\n` +
+        `👤 *Name:* ${data.name}\n` +
+        `📧 *Email:* ${data.email}\n` +
+        `🏢 *Company:* ${data.company}\n` +
+        `🏭 *Industry:* ${data.industry}\n` +
+        `⚙️ *Service:* ${data.service}\n` +
+        `💰 *Budget:* ${data.budget}\n\n` +
+        `💬 *Message:*\n${data.message}\n\n` +
+        `⏰ *Submitted:* ${new Date().toLocaleString()}\n` +
+        `🌐 *Source:* NeuralFlow AI Website`;
+
+      // Format email message with all form data
+      const emailMessage = `
+        Name: ${data.name}
+        Email: ${data.email}
+        Company: ${data.company}
+        Industry: ${data.industry}
+        Service: ${data.service}
+        Budget: ${data.budget}
+        Message: ${data.message}
+        Submitted: ${new Date().toLocaleString()}
+        Source: NeuralFlow AI Website Contact Form
+      `;
+      
+      // Log WhatsApp message for development purposes
+      console.log('📱 WhatsApp notification data prepared:', whatsappMessage);
+      
+      // You can manually copy this formatted message to WhatsApp:
+      // +03322555238
+      if (process.env.NODE_ENV === 'development') {
+        console.log('\n🔗 WhatsApp Link (for manual use):', `https://wa.me/03322555238?text=${encodeURIComponent(whatsappMessage)}`);
+      }
+      
+      // Send to WhatsApp directly
+      try {
+        const { submitToWhatsApp } = await import('@/utils/emailService');
+        
+        const whatsappData = {
           email: data.email,
           name: data.name,
           company: data.company,
-          message: `Service: ${data.service}\nBudget: ${data.budget}\nIndustry: ${data.industry}\n\n${data.message}`,
-          source: 'contact-form'
-        },
-        {
-          formspreeId: config.formspree.contactFormId
-        }
-      );
-
-      // Create email body for automatic forwarding
-      const emailBody = `
-New contact form submission from NeuralFlow AI website:
-
-Name: ${data.name}
-Email: ${data.email}
-Company: ${data.company}
-Industry: ${data.industry}
-Service Interested In: ${data.service}
-Budget Range: ${data.budget}
-
-Message:
-${data.message}
-
----
-Sent from NeuralFlow AI Contact Form
-Time: ${new Date().toLocaleString()}
-      `.trim();
-
-      // Log successful submission
-      if (process.env.NODE_ENV === 'production') {
-        console.log('✅ Form submitted successfully via email service');
-      } else {
-        // For development: Create mailto link
-        const subject = encodeURIComponent(`New Contact Form Submission - ${data.company}`);
-        const body = encodeURIComponent(emailBody);
-        const mailtoLink = `mailto:hello@neuralflow.cloud?subject=${subject}&body=${body}`;
+          phone: data.phone,
+          message: emailMessage,
+          source: 'contact-form' as const
+        };
         
-        // Open default email client
-        window.location.href = mailtoLink;
+        console.log('Sending form data to WhatsApp:', whatsappData);
+        
+        // Submit to WhatsApp with the specified number
+        const whatsappSuccess = submitToWhatsApp(whatsappData, '+92 310 5163094');
+        
+        if (whatsappSuccess) {
+          console.log('WhatsApp submission successful');
+          setMessage('Thank you for your message! WhatsApp has been opened with your details. Please send the message to complete your submission. We\'ll get back to you within 24 hours!');
+          setIsSuccess(true);
+          
+          // Also save the user's email for your records
+          try {
+            const { saveEmail } = await import('@/utils/emailStorage');
+            saveEmail(data.email, 'contact-form', {
+              name: data.name,
+              company: data.company,
+              message: data.message
+            });
+          } catch (storageError) {
+            console.warn('Failed to save email to local storage:', storageError);
+          }
+          
+          // Clear the message after 8 seconds
+          setTimeout(() => {
+            setMessage('');
+            setIsSuccess(false);
+          }, 8000);
+          
+          reset();
+        } else {
+          console.error('WhatsApp submission failed');
+          setMessage('Unable to open WhatsApp. Please contact us directly at hello@neuralflow.cloud or call us for immediate assistance.');
+          setIsSuccess(false);
+          
+          // Clear the error message after 8 seconds
+          setTimeout(() => {
+            setMessage('');
+          }, 8000);
+        }
+      } catch (whatsappError) {
+        console.error('WhatsApp submission error:', whatsappError);
+        
+        setMessage('Unable to open WhatsApp. Please contact us directly at hello@neuralflow.cloud or call us for immediate assistance.');
+        setIsSuccess(false);
+        
+        // Clear the error message after 8 seconds
+        setTimeout(() => {
+          setMessage('');
+          setIsSuccess(false);
+        }, 8000);
       }
-      
-      console.log('✅ Contact form data saved:', data);
-      
-      toast({
-        title: 'Form saved & opening email client...',
-        description: 'Your contact info has been saved. A new email will be created with your form details.',
-      });
-      
-      reset();
     } catch (error) {
-      toast({
-        title: 'Error processing form',
-        description: 'Please try again or contact us directly at hello@neuralflow.cloud',
-        variant: 'destructive',
-      });
+      console.error('Form submission error:', error);
+      
+      // Show user-friendly message using state
+      setMessage('Thank you for your interest! Our form service is temporarily unavailable. Please contact us directly at hello@neuralflow.cloud or call us for immediate assistance.');
+      setIsSuccess(false);
+      
+      // Clear message after 8 seconds (longer for error messages)
+      setTimeout(() => {
+        setMessage('');
+        setIsSuccess(false);
+      }, 8000);
+      
+      // Still save to local storage as backup
+      try {
+        const { saveEmail } = await import('@/utils/emailStorage');
+        saveEmail(data.email, 'contact-form', {
+          name: data.name,
+          company: data.company,
+          message: data.message
+        });
+        console.log('Form data saved to local storage as backup');
+      } catch (storageError) {
+        console.error('Failed to save to local storage:', storageError);
+      }
     }
   }
 
   const openCalendly = () => {
     window.open('https://calendly.com/neuralflow-cloud/30min', '_blank', 'width=800,height=600');
     
-    toast({
-      title: 'Opening Calendly',
-      description: 'Book your free consultation now!',
+    toast.success('Opening Calendly - Book your free consultation now!', {
+      duration: 3000,
     });
   };
 
   const joinDiscord = () => {
     window.open('https://discord.gg/Ew8kkNH8ny', '_blank');
     
-    toast({
-      title: 'Opening Discord',
-      description: 'Connect with us on Discord for instant support!',
+    toast.success('Opening Discord - Connect with us for instant support!', {
+      duration: 3000,
     });
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/923105163094', '_blank');
+    window.open('https://wa.me/03322555238', '_blank');
     
-    toast({
-      title: 'Opening WhatsApp',
-      description: 'Chat with us directly for immediate assistance!',
+    toast.success('Opening WhatsApp - Chat with us directly for immediate assistance!', {
+      duration: 3000,
     });
   };
 
   const openFiverr = () => {
     window.open('https://www.fiverr.com/neuralflow/', '_blank');
     
-    toast({
-      title: 'Opening Fiverr',
-      description: 'Check out our services on Fiverr!',
+    toast.success('Opening Fiverr - Check out our services!', {
+      duration: 3000,
     });
   };
 
   const openUpwork = () => {
     window.open('https://www.upwork.com/freelancers/~01d485e79288c75193', '_blank');
     
-    toast({
-      title: 'Opening Upwork',
-      description: 'Connect with us on Upwork for professional services!',
+    toast.success('Opening Upwork - Connect with us for professional services!', {
+      duration: 3000,
     });
   };
 
   const openInstagram = () => {
     window.open('https://www.instagram.com/neuralflow.cloud/', '_blank');
     
-    toast({
-      title: 'Opening Instagram',
-      description: 'Follow us on Instagram for updates!',
+    toast.success('Opening Instagram - Follow us for updates!', {
+      duration: 3000,
     });
   };
 
   const openEmail = () => {
-    window.location.href = 'mailto:hello@neuralflow.cloud?subject=Business Inquiry&body=Hello Neural Flow team, I would like to discuss...';
+    const subject = encodeURIComponent('Business Inquiry - NeuralFlow AI');
+    const body = encodeURIComponent('Hello NeuralFlow AI team,\n\nI would like to discuss AI automation solutions for my business.\n\nPlease contact me to schedule a consultation.\n\nBest regards');
+    const mailtoLink = `mailto:hello@neuralflow.cloud?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    toast.success('📧 Opening Email Client - A new email to hello@neuralflow.cloud will be created with your default email client.', {
+      duration: 3000,
+    });
   };
 
   return (
@@ -223,7 +290,7 @@ Time: ${new Date().toLocaleString()}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16 scroll-reveal">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gradient mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gradient mb-6">
             Get Your Free AI Automation Consultation
           </h2>
           <h3 className="text-lg sm:text-xl md:text-2xl text-accent-blue font-semibold mb-4">
@@ -500,6 +567,14 @@ Time: ${new Date().toLocaleString()}
               </form>
             </CardContent>
           </Card>
+          
+          {message && (
+            <div className={`mt-6 p-4 rounded-lg text-center ${
+              isSuccess ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'
+            }`}>
+              <p className="text-sm sm:text-base">{message}</p>
+            </div>
+          )}
         </div>
 
         <div className="text-center mt-8 lg:mt-12 scroll-reveal">
@@ -509,6 +584,9 @@ Time: ${new Date().toLocaleString()}
           </p>
         </div>
       </div>
+      
+      {/* Free Order Promotion */}
+      <FreeOrderSection variant="compact" showBackground={false} />
     </section>
   );
 };

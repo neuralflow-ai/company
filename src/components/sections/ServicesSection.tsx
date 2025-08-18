@@ -7,27 +7,27 @@ import NeuralFlowAgent from '../ai/NeuralFlowAgent';
 const services = [
   {
     icon: BrainCircuit,
-    title: 'Intelligent Process Automation (IPA)',
-    description: 'Advanced AI-powered business process automation that learns, adapts, and optimizes workflows automatically. Reduce manual tasks by 90% with our intelligent automation solutions.',
-    keywords: 'intelligent process automation, IPA, business process automation, AI workflow automation'
+    title: 'Agentic AI & Intelligent Process Automation',
+    description: 'Advanced agentic AI-powered business process automation that learns, adapts, and optimizes workflows automatically. Reduce manual tasks by 90% with our intelligent process automation solutions.',
+    keywords: 'agentic AI, intelligent process automation, IPA, business process automation, AI workflow automation'
   },
   {
     icon: Zap,
-    title: 'AI Workflow Optimization',
-    description: 'Transform inefficient processes with AI workflow optimization tools. Our solutions identify bottlenecks, streamline operations, and boost productivity by 300%.',
-    keywords: 'AI workflow optimization, workflow automation tools, process optimization, business efficiency'
+    title: 'AI Workflow Automation Platform',
+    description: 'Transform inefficient processes with our AI workflow automation platform. Our solutions identify bottlenecks, streamline operations, and boost productivity by 300% through intelligent automation.',
+    keywords: 'AI workflow automation, workflow automation platform, process optimization, business efficiency, agentic AI'
   },
   {
     icon: Bot,
-    title: 'Custom AI Agent Development',
-    description: 'Bespoke AI agents designed for your specific business needs. From customer service to data analysis, our AI agents work 24/7 to drive results.',
-    keywords: 'custom AI agents, AI agent development, business AI solutions, automated AI assistants'
+    title: 'Agentic AI Development & Custom AI Agents',
+    description: 'Bespoke agentic AI systems designed for your specific business needs. From customer service to data analysis, our custom AI agents work 24/7 to drive results.',
+    keywords: 'agentic AI development, custom AI agents, AI agent development, business AI solutions, automated AI assistants'
   },
   {
     icon: MessageSquare,
-    title: 'AI Chatbots & Virtual Assistants',
-    description: 'Intelligent conversational AI that handles customer support, lead qualification, and user engagement. Improve customer satisfaction while reducing support costs.',
-    keywords: 'AI chatbots, virtual assistants, conversational AI, customer service automation'
+    title: 'Conversational AI Platform & AI Chatbots',
+    description: 'Intelligent conversational AI platform that handles customer support, lead qualification, and user engagement. Improve customer satisfaction while reducing support costs with our advanced AI chatbots.',
+    keywords: 'conversational AI platform, AI chatbots, virtual assistants, conversational AI, customer service automation'
   },
   {
     icon: Code,
@@ -90,10 +90,10 @@ const ServicesSection = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12 scroll-reveal">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gradient animate-gradient-shift">AI Business Automation Services</h2>
-            <h3 className="text-xl md:text-2xl text-accent-blue mt-2 font-semibold">Intelligent Process Automation • Workflow Optimization • Custom AI Solutions</h3>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gradient animate-gradient-shift">Agentic AI & AI Workflow Automation Services</h2>
+            <h3 className="text-xl md:text-2xl text-accent-blue mt-2 font-semibold">Agentic AI Development • Conversational AI Platform • Intelligent Process Automation</h3>
             <p className="text-base md:text-lg text-foreground/70 mt-4 animate-slide-in-up max-w-3xl mx-auto" style={{ animationDelay: '0.2s' }}>
-              Transform your business operations with our proven <strong>AI automation solutions</strong>. We help companies boost efficiency by 300%, reduce operational costs by 60%, and accelerate growth through <strong>intelligent process automation</strong> and <strong>AI workflow optimization</strong>. Our comprehensive suite includes custom AI agents, automated workflows, and enterprise-grade solutions.
+              Transform your business operations with our proven <strong>agentic AI solutions</strong>. We help companies boost efficiency by 300%, reduce operational costs by 60%, and accelerate growth through <strong>AI workflow automation platform</strong> and <strong>conversational AI platforms</strong>. Our comprehensive suite includes agentic AI development, automated workflows, and enterprise-grade solutions.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2 text-sm">
               <span className="bg-accent-blue/10 text-accent-blue px-3 py-1 rounded-full border border-accent-blue/30">🚀 Proven ROI in 30 Days</span>

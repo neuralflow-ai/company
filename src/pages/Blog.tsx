@@ -6,6 +6,7 @@ import { Calendar, Clock, ArrowRight, TrendingUp, Zap, Brain } from 'lucide-reac
 import BlogPost from '@/components/BlogPost';
 import TrustBadges from '@/components/TrustBadges';
 import SEOHead from '@/components/SEO/SEOHead';
+import AdvancedSchema from '@/components/SEO/AdvancedSchema';
 import NetworkBackground from '@/components/three/NetworkBackground';
 
 const blogPosts = [
@@ -655,85 +656,6 @@ const blogPosts = [
       <h3>Continuous Improvement Cycles</h3>
       <p>AI systems learn from every decision and outcome, continuously refining their recommendations and improving optimization accuracy. This creates a virtuous cycle of improvement that compounds business benefits over time.</p>
     `
-  },
-  {
-    id: 28,
-    title: "Anthropic Claude Computer Use: AI Agents That Control Your Desktop",
-    excerpt: "Explore Anthropic's groundbreaking Computer Use feature that enables Claude to interact with desktop applications. Learn about automation possibilities, security considerations, and practical implementation strategies.",
-    category: "AI Agents",
-    readTime: "8 min read",
-    date: "January 5, 2025",
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=400&fit=crop&crop=center",
-    keywords: ["Claude Computer Use", "desktop automation", "AI agents", "Anthropic AI", "computer vision AI", "RPA automation"],
-    slug: "claude-computer-use-desktop-automation-guide",
-    content: `
-      <div className="prose prose-invert max-w-none">
-        <h2>Claude Computer Use: The Future of Desktop Automation</h2>
-        <p>Anthropic's Computer Use feature represents a revolutionary advancement in AI capabilities, enabling Claude to see, click, type, and navigate desktop applications just like a human user. This breakthrough technology opens new possibilities for business process automation and productivity enhancement.</p>
-        
-        <h3>How Computer Use Technology Works</h3>
-        <p>Computer Use combines advanced computer vision, natural language understanding, and precise action execution. Claude can take screenshots, analyze visual elements, understand application interfaces, and perform complex multi-step tasks across different software applications with 89% accuracy in standard business workflows.</p>
-        
-        <h3>Practical Business Applications</h3>
-        <p>Real-world use cases include: automated data entry across multiple systems, complex report generation from various sources, software testing and quality assurance, customer service workflow automation, and cross-platform data migration. Early adopters report 60% reduction in manual administrative tasks.</p>
-        
-        <h3>Security and Privacy Considerations</h3>
-        <p>Computer Use operates with strict security protocols, including encrypted screen capture, limited system access, and user-defined boundaries. Organizations can implement access controls, audit trails, and approval workflows to ensure secure automation while maintaining compliance with data protection regulations.</p>
-        
-        <h3>Integration with Existing Systems</h3>
-        <p>The technology integrates seamlessly with existing business applications without requiring API access or system modifications. This makes it particularly valuable for legacy systems, third-party software, and complex workflows that span multiple applications and platforms.</p>
-        
-        <h3>Performance and Reliability Metrics</h3>
-        <p>Current benchmarks show 89% task completion accuracy, 2.3-second average response time, and 95% reliability in repetitive tasks. The system handles interruptions gracefully and can resume complex workflows after system updates or temporary disconnections.</p>
-        
-        <h3>Implementation Best Practices</h3>
-        <p>Successful deployment requires: clear task definition and boundaries, comprehensive testing in controlled environments, gradual rollout with human oversight, regular performance monitoring, and continuous optimization based on usage patterns and feedback.</p>
-        
-        <h3>Future Developments and Roadmap</h3>
-        <p>Anthropic's roadmap includes enhanced mobile device support, improved multi-monitor handling, advanced workflow orchestration, and integration with popular business automation platforms. These developments will further expand Computer Use applications across industries.</p>
-      </div>
-    `
-  },
-  {
-    id: 17,
-    title: "AI Video Generation 2025: Sora, Runway, Pika Labs Complete Comparison",
-    excerpt: "Comprehensive analysis of leading AI video generation platforms. Compare features, quality, pricing, and use cases for Sora, Runway ML, Pika Labs, and other top AI video tools for content creators and businesses.",
-    category: "Content Marketing",
-    readTime: "11 min read",
-    date: "January 3, 2025",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=400&fit=crop&crop=center",
-    keywords: ["AI video generation", "Sora AI", "Runway ML", "Pika Labs", "AI content creation", "video AI tools"],
-    slug: "ai-video-generation-platforms-comparison-2025",
-    content: `
-      <div className="prose prose-invert max-w-none">
-        <h2>AI Video Generation 2025: The Complete Platform Guide</h2>
-        <p>The AI video generation landscape has exploded with innovative platforms offering unprecedented capabilities for content creation. This comprehensive comparison analyzes the leading tools, helping creators and businesses choose the right platform for their video production needs.</p>
-        
-        <h3>OpenAI Sora: Cinematic Quality AI Video</h3>
-        <p>Sora leads in video quality and realism, generating up to 60-second videos with cinematic quality and complex scene understanding. The platform excels in maintaining character consistency, realistic physics simulation, and detailed environmental rendering, achieving 94% user satisfaction in quality assessments.</p>
-        
-        <h3>Runway ML: Professional Video Production Suite</h3>
-        <p>Runway ML offers the most comprehensive video editing and generation toolkit, combining AI generation with professional editing features. The platform provides advanced motion control, style transfer, and collaborative workflows, making it ideal for professional video production teams and agencies.</p>
-        
-        <h3>Pika Labs: Accessible AI Video Creation</h3>
-        <p>Pika Labs focuses on user-friendly video generation with intuitive controls and rapid iteration capabilities. The platform offers excellent text-to-video conversion, image animation features, and community-driven improvements, with 85% of users creating satisfactory videos on their first attempt.</p>
-        
-        <h3>Quality and Performance Benchmarks</h3>
-        <p>Comparative analysis reveals: Sora achieves highest visual fidelity (9.2/10 average rating), Runway ML offers best editing integration (95% workflow compatibility), and Pika Labs provides fastest generation times (average 45 seconds per video). Each platform shows distinct strengths for different use cases.</p>
-        
-        <h3>Pricing and Accessibility</h3>
-        <p>Cost comparison shows significant variation: Sora operates on credit-based pricing ($0.10-0.30 per second), Runway ML offers subscription tiers ($12-76/month), and Pika Labs provides freemium access with paid upgrades. Enterprise pricing and volume discounts are available across all platforms.</p>
-        
-        <h3>Business Applications and Use Cases</h3>
-        <p>Enterprise applications include: marketing campaign creation, product demonstration videos, training content development, social media content automation, and prototype visualization. Companies report 70% reduction in video production costs and 5x faster content creation cycles.</p>
-        
-        <h3>Technical Capabilities and Limitations</h3>
-        <p>Current limitations include: maximum video length constraints (60 seconds for most platforms), text rendering challenges, complex motion accuracy, and computational resource requirements. However, rapid improvements address these limitations with each platform update.</p>
-        
-        <h3>Future Trends and Developments</h3>
-        <p>Emerging trends include: longer video generation capabilities, real-time video editing, voice synchronization, interactive video elements, and integration with live streaming platforms. These developments will further democratize professional video production.</p>
-      </div>
-    `
   }
 ];
 
@@ -776,9 +698,33 @@ const Blog = () => {
     return <BlogPost post={selectedPost} onBack={handleBackToBlog} />;
   }
 
+  // Generate dynamic keywords from all blog posts
+  const allKeywords = blogPosts.reduce((acc, post) => {
+    if (Array.isArray(post.keywords)) {
+      return [...acc, ...post.keywords];
+    } else if (typeof post.keywords === 'string') {
+      return [...acc, ...post.keywords.split(', ')];
+    }
+    return acc;
+  }, [] as string[]);
+  
+  const uniqueKeywords = [...new Set(allKeywords)].slice(0, 15).join(', ');
+
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <SEOHead page="blog" />
+      <SEOHead 
+        title="AI Automation Blog - Expert Insights & Latest Trends | Neural Flow"
+        description="Discover expert insights on AI automation, agentic AI systems, multimodal AI solutions, and intelligent automation. Latest trends, case studies, and actionable strategies for modern business leaders."
+        keywords={uniqueKeywords}
+        canonicalUrl="https://neuralflow.cloud/blog"
+        page="blog"
+      />
+      <AdvancedSchema 
+        type="website" 
+        data={{
+          url: "https://neuralflow.cloud/blog"
+        }}
+      />
       <NetworkBackground 
         nodeCount={50}
         color="#00c2ff"
@@ -789,7 +735,7 @@ const Blog = () => {
       <section className="relative z-10 pt-32 pb-20 px-4 bg-gradient-to-b from-transparent via-light-purple/20 to-transparent">
         <div className="container mx-auto">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               AI Agents & Automation
               <span className="text-gradient block">Latest Insights</span>
             </h1>

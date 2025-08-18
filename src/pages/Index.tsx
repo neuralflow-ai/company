@@ -8,11 +8,7 @@ import IndustriesSection from '@/components/sections/IndustriesSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import ContactSection from '@/components/sections/ContactSection';
-import WelcomePopup from '@/components/ui/WelcomePopup';
-import { useWelcomePopup } from '@/hooks/useWelcomePopup';
-
 const Index = () => {
-  const { isPopupOpen, closePopup } = useWelcomePopup();
 
   return (
     <>
@@ -27,8 +23,7 @@ const Index = () => {
         <ContactSection />
       </div>
       
-      {/* Welcome Popup */}
-      <WelcomePopup isOpen={isPopupOpen} onClose={closePopup} />
+
     </>
   );
 };

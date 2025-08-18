@@ -25,15 +25,15 @@ const HeroSection = () => {
         <NetworkBackground />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-purple/20 to-transparent"></div>
         <div className="relative z-10 text-center px-4 animate-fade-in parallax-bg" style={{ animationDelay: '0.5s'}}>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight animate-scale-in">
-            AI Business Automation
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold tracking-tight text-white leading-tight animate-scale-in">
+            Agentic AI & AI Workflow Automation
             <br />
             <span className="text-gradient animate-gradient-shift">
               That Scales Your Success
             </span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-foreground/90 animate-slide-in-up px-4" style={{ animationDelay: '0.6s' }}>
-            Transform your business with intelligent AI automation solutions that work 24/7
+            Transform your business with agentic AI solutions, conversational AI platforms, and intelligent process automation that work 24/7
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-in-up px-4" style={{ animationDelay: '1.1s' }}>
             <Button

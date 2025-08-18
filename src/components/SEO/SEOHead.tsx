@@ -128,7 +128,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
         <meta name="business:contact_data:postal_code" content="94105" />
         <meta name="business:contact_data:country_name" content="United States" />
         <meta name="business:contact_data:email" content="hello@neuralflow.cloud" />
-        <meta name="business:contact_data:phone_number" content="+1-555-0123" />
+        <meta name="business:contact_data:phone_number" content="+92 310 5163094" />
         <meta name="business:contact_data:website" content="https://neuralflow.cloud" />
         
         {/* Performance Optimization */}

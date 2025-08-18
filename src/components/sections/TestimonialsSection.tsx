@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 scroll-reveal">
-          <h2 className="font-display text-4xl font-bold text-gradient">Trusted by Industry Leaders</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">Trusted by Industry Leaders</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (

@@ -65,16 +65,16 @@ const AboutSection = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center mb-20 scroll-reveal">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gradient mb-8">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gradient mb-8">
               About Neural Flow
             </h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-lg md:text-xl lg:text-2xl text-white font-medium leading-relaxed mb-6 animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
-                Transforming Tomorrow Through <span className="text-gradient">Intelligent Automation</span>
+                Transforming Tomorrow Through <span className="text-gradient">Agentic AI & Intelligent Process Automation</span>
               </p>
               <p className="text-base md:text-lg text-foreground/90 leading-relaxed animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
-                We are a world-class AI automation agency dedicated to revolutionizing businesses through 
-                cutting-edge artificial intelligence. Our mission is to democratize AI technology, making it 
+                We are a world-class agentic AI and AI workflow automation agency dedicated to revolutionizing businesses through 
+                cutting-edge conversational AI platforms and intelligent process automation. Our mission is to democratize agentic AI technology, making it 
                 accessible, powerful, and transformative for organizations across all industries and scales.
               </p>
             </div>
@@ -89,14 +89,14 @@ const AboutSection = () => {
               
               <div className="space-y-6 text-foreground/90">
                 <p className="text-lg leading-relaxed">
-                  To become the <span className="text-white font-semibold">global leader in AI automation</span>, 
-                  empowering every business to harness the transformative power of artificial intelligence 
+                  To become the <span className="text-white font-semibold">global leader in agentic AI and AI workflow automation</span>, 
+                  empowering every business to harness the transformative power of conversational AI platforms 
                   and unlock their full potential in the digital renaissance.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  We envision a future where AI enhances human creativity and productivity, creating 
+                  We envision a future where agentic AI enhances human creativity and productivity, creating 
                   <span className="text-accent-blue font-medium"> unprecedented opportunities</span> for 
-                  innovation and growth across every sector of the economy.
+                  innovation and growth across every sector through intelligent process automation.
                 </p>
               </div>
               

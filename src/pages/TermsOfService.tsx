@@ -17,7 +17,7 @@ const TermsOfService = () => {
       
       <div className="container mx-auto max-w-4xl relative z-10">
         <div className="text-center mb-12">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-4">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-4">
             Terms of Service
           </h1>
           <p className="text-foreground/60">Last updated: {new Date().toLocaleDateString()}</p>

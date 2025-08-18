@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import SEOHead from '@/components/SEO/SEOHead';
+import AdvancedSchema from '@/components/SEO/AdvancedSchema';
 // Removed NetlifyStyleHeader import - using unified background from App.tsx
 import { 
   Bot, 
@@ -22,6 +23,7 @@ import {
 } from 'lucide-react';
 import NetworkBackground from '@/components/three/NetworkBackground';
 import TrustBadges from '@/components/TrustBadges';
+import FreeOrderSection from '@/components/sections/FreeOrderSection';
 
 const services = [
   {
@@ -353,16 +355,31 @@ const Services = () => {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
+  const servicesKeywords = services.map(service => service.keywords).join(', ');
+  
   return (
     <div className="min-h-screen bg-dark-purple">
-      <SEOHead page="services" />
+      <SEOHead 
+        title="AI Business Automation Services | Intelligent Process Automation Solutions"
+        description="Comprehensive AI automation services including intelligent process automation, custom AI agents, workflow optimization, and enterprise automation solutions. Transform your business with cutting-edge AI technology."
+        keywords={`AI business automation services, intelligent process automation, custom AI agents, workflow automation, enterprise AI solutions, ${servicesKeywords}`}
+        canonicalUrl="https://neuralflow.cloud/services"
+      />
+      <AdvancedSchema 
+        type="service" 
+        data={{
+          name: "AI Automation Services",
+          description: "Comprehensive AI automation solutions including custom AI agents, intelligent process automation, workflow optimization, and enterprise AI solutions.",
+          url: "https://neuralflow.cloud/services"
+        }}
+      />
       {/* SEO-Optimized Header with Animated Background */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-background/50 via-background/30 to-transparent overflow-hidden">
         <NetworkBackground nodeCount={50} color="#00c2ff" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-purple/20 to-transparent"></div>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               AI Business Automation
               <span className="text-gradient block">Services & Solutions</span>
             </h1>
@@ -400,7 +417,7 @@ const Services = () => {
 
       {/* Services Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <Card key={index} className="bg-glass border-white/10 hover:border-accent-blue/50 transition-all duration-500 group relative overflow-hidden hover:shadow-2xl hover:shadow-accent-blue/20 hover:-translate-y-2 hover:scale-[1.02]">
@@ -492,9 +509,12 @@ const Services = () => {
       {/* Trust Badges */}
       <TrustBadges />
 
+      {/* Free Order Promotion */}
+      <FreeOrderSection />
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-accent-blue/10 to-accent-pink/10">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Transform Your Business with AI Automation?
           </h3>

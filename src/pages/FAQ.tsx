@@ -253,7 +253,7 @@ const FAQ = () => {
       <section className="relative z-10 pt-32 pb-20 px-4 bg-gradient-to-b from-transparent via-light-purple/20 to-transparent">
         <div className="container mx-auto">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Agentic AI & Automation
               <span className="text-gradient block">FAQ</span>
             </h1>

@@ -29,7 +29,7 @@ const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = ({
     postalCode: '94105',
     addressCountry: 'US'
   },
-  phone = '+1-555-0123',
+  phone = '+92 310 5163094',
   email = 'hello@neuralflow.cloud',
   website = 'https://neuralflow.cloud',
   openingHours = ['Mo-Fr 09:00-18:00'],

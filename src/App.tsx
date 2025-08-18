@@ -5,6 +5,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 import MainLayout from './components/layout/MainLayout';
 import LoadingSpinner from './components/ui/LoadingSpinner';
+import PromoPopup from './components/ui/PromoPopup';
+import { usePromoPopup } from './hooks/usePromoPopup';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Index'));
@@ -20,6 +22,8 @@ const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
+  const { isOpen, closePopup } = usePromoPopup();
+
   return (
     <HelmetProvider>
       <Router>
@@ -54,6 +58,9 @@ function App() {
               },
             }}
           />
+          
+          {/* Promotional Popup */}
+          <PromoPopup isOpen={isOpen} onClose={closePopup} />
         </div>
       </Router>
     </HelmetProvider>

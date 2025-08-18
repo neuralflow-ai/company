@@ -33,7 +33,7 @@ const AdvancedSchema: React.FC<AdvancedSchemaProps> = ({ type = 'organization', 
           },
           contactPoint: {
             '@type': 'ContactPoint',
-            telephone: '+1-555-0123',
+            telephone: '+92 310 5163094',
             contactType: 'customer service',
             email: 'hello@neuralflow.cloud',
             availableLanguage: 'English'

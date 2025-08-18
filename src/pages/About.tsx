@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import SEOHead from '@/components/SEO/SEOHead';
+import AdvancedSchema from '@/components/SEO/AdvancedSchema';
 import { 
   Users, 
   Award, 
@@ -86,19 +87,25 @@ const About = () => {
   return (
     <>
       <SEOHead 
-        title="About NeuralFlow AI - Leading AI Automation Company | Custom AI Solutions"
-        description="Learn about NeuralFlow AI, a premier AI automation company specializing in custom AI solutions and business process automation. 500+ successful projects, 98% client satisfaction."
-        keywords="AI automation company, custom AI solutions, business process automation, AI development team, intelligent automation experts"
-        canonical="https://neuralflow-ai.com/about"
+        title="About Neural Flow AI | Leading AI Business Automation Agency"
+        description="Learn about Neural Flow AI, the premier AI business automation agency. Our expert team specializes in intelligent process automation, custom AI agents, and enterprise automation solutions with proven 300%+ ROI results."
+        keywords="about Neural Flow AI, AI automation agency, intelligent process automation company, AI business solutions, enterprise automation experts, AI workflow optimization team"
+        canonicalUrl="https://neuralflow.cloud/about"
+      />
+      <AdvancedSchema 
+        type="organization" 
+        data={{
+          url: "https://neuralflow.cloud/about"
+        }}
       />
       <div className="min-h-screen bg-dark-purple">
       {/* Hero Section with Animated Background */}
       <section className="relative pt-32 pb-20 px-4 bg-gradient-to-b from-transparent via-light-purple/20 to-transparent overflow-hidden">
         <NetworkBackground nodeCount={50} color="#00c2ff" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-purple/20 to-transparent"></div>
-        <div className="container mx-auto">
+        <div className="container mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               About <span className="text-gradient">NeuralFlow AI</span>
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl text-accent-blue font-semibold mb-4 px-4">
@@ -200,7 +207,7 @@ const About = () => {
 
       {/* Our Values */}
       <section className="py-20 bg-gradient-to-r from-light-purple/50 to-dark-purple/50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 text-center">
               Our Core Values
@@ -231,7 +238,7 @@ const About = () => {
 
       {/* Team Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 text-center">
               Meet Our AI Automation Experts
@@ -267,7 +274,7 @@ const About = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-accent-blue/10 to-accent-pink/10">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to Transform Your Business?
           </h3>

@@ -44,7 +44,7 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Our <span className="text-gradient">Portfolio</span>
           </h2>
           <p className="text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto mb-8">

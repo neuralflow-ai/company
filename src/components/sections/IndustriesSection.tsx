@@ -81,7 +81,7 @@ const IndustriesSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-16 scroll-reveal">
-          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-gradient mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-gradient mb-6">
             Industries We Serve
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed animate-slide-in-up" style={{ animationDelay: '0.3s' }}>

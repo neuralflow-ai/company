@@ -108,7 +108,7 @@ export const seoConfig = {
       sameAs: [
         'https://linkedin.com/company/neuralflow-ai',
         'https://twitter.com/neuralflowai',
-        'https://github.com/neuralflow-ai'
+        'https://github.com/neuralflow-ai/company'
       ],
       address: {
         '@type': 'PostalAddress',

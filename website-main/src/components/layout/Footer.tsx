@@ -14,8 +14,20 @@ const Footer = () => {
     window.open('https://calendly.com/neuralflow-cloud/30min', '_blank', 'width=800,height=600');
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToHero = () => {
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      // If on home page, scroll to hero section
+      const heroSection = document.getElementById('hero-section');
+      if (heroSection) {
+        heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home page
+      window.location.href = '/';
+    }
   };
 
   // Custom Fiverr Icon Component
@@ -44,7 +56,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           <div className="lg:col-span-2">
-            <div onClick={scrollToTop} className="cursor-pointer">
+            <div onClick={scrollToHero} className="cursor-pointer">
               <Logo />
             </div>
             <p className="max-w-md text-foreground/60 mt-4">

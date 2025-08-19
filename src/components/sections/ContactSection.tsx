@@ -128,7 +128,7 @@ const ContactSection = () => {
       // You can manually copy this formatted message to WhatsApp:
       // +03322555238
       if (process.env.NODE_ENV === 'development') {
-        console.log('\n🔗 WhatsApp Link (for manual use):', `https://wa.me/03322555238?text=${encodeURIComponent(whatsappMessage)}`);
+        console.log('\n🔗 WhatsApp Link (for manual use):', `https://wa.me/923105163094?text=${encodeURIComponent(whatsappMessage)}`);
       }
       
       // Send to WhatsApp directly
@@ -240,7 +240,7 @@ const ContactSection = () => {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/03322555238', '_blank');
+    window.open('https://wa.me/923105163094', '_blank');
     
     toast.success('Opening WhatsApp - Chat with us directly for immediate assistance!', {
       duration: 3000,

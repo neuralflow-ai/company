@@ -4,7 +4,7 @@
 
 ## 🌟 Live Website
 
-**GitHub Repository**: [https://github.com/neuralflow-ai/website](https://github.com/neuralflow-ai/website)
+**GitHub Repository**: [https://github.com/neuralflow-ai/company](https://github.com/neuralflow-ai/company)
 
 ## 📋 Project Overview
 
@@ -56,7 +56,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/neuralflow-ai/website.git
+   git clone https://github.com/neuralflow-ai/company.git
    cd website
    ```
 
@@ -165,7 +165,7 @@ This project is proprietary and confidential. All rights reserved by NeuralFlow 
 For support and questions:
 - **Email**: support@neuralflow-ai.com
 - **Website**: [https://neuralflow-ai.com](https://neuralflow-ai.com)
-- **GitHub Issues**: [Create an issue](https://github.com/neuralflow-ai/website/issues)
+- **GitHub Issues**: [Create an issue](https://github.com/neuralflow-ai/company/issues)
 
 ## 🙏 Acknowledgments
 

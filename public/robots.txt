@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://neuralflow.cloud/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block access to admin or sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow important files
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /.well-known/
+
+# Host directive
+Host: https://neuralflow.cloud

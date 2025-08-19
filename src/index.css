@@ -1,0 +1,344 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 100% 4%; /* #0a001a */
+    --foreground: 240 7% 93%; /* #e8e6e9 */
+
+    --card: 260 80% 8%;
+    --card-foreground: 240 7% 93%;
+
+    --popover: 260 100% 4%;
+    --popover-foreground: 240 7% 93%;
+
+    --primary: 205 100% 50%; /* #00c2ff */
+    --primary-foreground: 260 100% 4%;
+
+    --secondary: 255 71% 14%; /* #1a0d3b */
+    --secondary-foreground: 240 7% 93%;
+
+    --muted: 255 71% 14%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 255 71% 14%;
+    --accent-foreground: 240 7% 93%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 255 71% 14%;
+    --input: 255 71% 14%;
+    --ring: 205 100% 50%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: #000212;
+    font-display: swap;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Critical performance optimizations */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    src: local('Inter'), url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  }
+
+  @font-face {
+    font-family: 'Exo 2';
+    font-display: swap;
+    src: local('Exo 2'), url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap');
+  }
+}
+
+.glass-card {
+  @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-2xl;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  @apply border-accent-blue/50 bg-black/30;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 194, 255, 0.25);
+}
+
+/* Mobile-optimized hover states */
+@media (hover: hover) {
+  .glass-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@media (hover: none) {
+  .glass-card:active {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 194, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 194, 255, 0.8);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes tech-glow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes subtle-grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.8s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.section-transition {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00c2ff, #ff00c1);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.button-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) {
+  .button-3d:hover {
+    transform: translateZ(10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 194, 255, 0.3);
+  }
+}
+
+.parallax-bg {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  .glass-card {
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .section-transition {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Improved text scaling for mobile */
+@media (max-width: 768px) {
+  .font-display {
+    line-height: 1.2;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, .button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

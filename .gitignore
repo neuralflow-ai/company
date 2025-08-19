@@ -29,3 +29,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# WhatsApp Bot Authentication Files
+whatsapp-bot/auth_info_baileys/
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!components.json
